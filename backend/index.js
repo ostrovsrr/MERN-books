@@ -5,9 +5,9 @@ import cors from 'cors';
 import { Book } from './models/bookModel.js';
 import { bookRouter } from './routes/bookRoute.js';
 const app = express();
-app.use('/books', bookRouter);
 app.use(cors());
 app.use(express.json());
+app.use('/books', bookRouter);
 config({ path: '.env' });
 const PORT = process.env.PORT;
 // root

@@ -1,19 +1,20 @@
 import { useState } from 'react';
-import Main from './components/Main';
-import Book from './components/Book';
-import '../public/css/style.css';
+import Home from './pages/Home';
+import ViewBook from './pages/ViewBook';
+import AddBook from './pages/AddBook';
+import DeleteBook from './pages/DeleteBook';
+import EditBook from './pages/EditBook';
+import '../css/style.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={<Main />}
-          id="65c3a7607d544a4ff0038f8f"
-        ></Route>
-        <Route path={`/book/:id`} element={<Book />} />
+        <Route path="/" element={<Home />} />
+        <Route path={`/books/details/:id`} element={<ViewBook />} />
+        <Route path={`/books/add`} element={<AddBook />} />
+        <Route path={`/books/edit/:id`} element={<EditBook />} />
+        <Route path={`/books/delete/:id`} element={<DeleteBook />} />
       </Routes>
     </BrowserRouter>
   );
